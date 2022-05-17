@@ -33,6 +33,10 @@ class WrapperView extends StatelessWidget {
                 label: '',
                 icon: Icon(Icons.people),
               ),
+              BottomNavigationBarItem(
+                label: '',
+                icon: Icon(Icons.settings),
+              ),
             ],
           ),
         );

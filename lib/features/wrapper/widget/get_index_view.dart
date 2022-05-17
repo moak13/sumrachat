@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../home/home_view.dart';
 import '../../people/people_view.dart';
+import '../../settings/settings_view.dart';
 
 class GetIndexView extends StatelessWidget {
   final int index;
@@ -14,6 +15,8 @@ class GetIndexView extends StatelessWidget {
         return const HomeView();
       case 1:
         return const PeopleView();
+      case 2:
+        return const SettingsView();
       default:
         return const HomeView();
     }
