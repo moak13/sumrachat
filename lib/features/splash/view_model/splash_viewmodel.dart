@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:sumrachat/core/stores/user_store.dart';
 
 import '../../../core/app/app.locator.dart';
 import '../../../core/app/app.logger.dart';
 import '../../../core/app/app.router.dart';
 import '../../../core/services/database_service.dart';
+import '../../../core/stores/user_store.dart';
 
 class SplashViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
