@@ -11,16 +11,19 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 
 import '../../features/chat/chat_view.dart';
+import '../../features/login/login_view.dart';
 import '../../features/splash/splash_view.dart';
 import '../../features/wrapper/wrapper_view.dart';
 import '../models/user_model.dart';
 
 class Routes {
   static const String splashView = '/';
+  static const String loginView = '/login-view';
   static const String wrapperView = '/wrapper-view';
   static const String chatView = '/chat-view';
   static const all = <String>{
     splashView,
+    loginView,
     wrapperView,
     chatView,
   };
@@ -31,6 +34,7 @@ class StackedRouter extends RouterBase {
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
     RouteDef(Routes.splashView, page: SplashView),
+    RouteDef(Routes.loginView, page: LoginView),
     RouteDef(Routes.wrapperView, page: WrapperView),
     RouteDef(Routes.chatView, page: ChatView),
   ];
@@ -40,6 +44,12 @@ class StackedRouter extends RouterBase {
     SplashView: (data) {
       return buildAdaptivePageRoute<dynamic>(
         builder: (context) => const SplashView(),
+        settings: data,
+      );
+    },
+    LoginView: (data) {
+      return buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const LoginView(),
         settings: data,
       );
     },

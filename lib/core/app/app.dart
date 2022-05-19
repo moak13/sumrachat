@@ -1,6 +1,7 @@
 import 'package:sqflite_migration_service/sqflite_migration_service.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:sumrachat/features/login/login_view.dart';
 
 import '../../features/chat/chat_view.dart';
 import '../../features/splash/splash_view.dart';
@@ -15,6 +16,9 @@ import '../stores/user_store.dart';
     AdaptiveRoute(
       page: SplashView,
       initial: true,
+    ),
+    AdaptiveRoute(
+      page: LoginView,
     ),
     AdaptiveRoute(
       page: WrapperView,

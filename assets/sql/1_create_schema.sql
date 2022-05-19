@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS user(
   id INTEGER PRIMARY KEY,
   first_name TEXT,
   last_name TEXT,
+  is_authenticated INTEGER,
   image TEXT
 );
 
