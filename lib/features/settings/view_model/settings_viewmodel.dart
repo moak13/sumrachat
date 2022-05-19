@@ -11,6 +11,9 @@ class SettingsViewModel extends BaseViewModel {
   List<Data> _transactionList = [];
   List<Data> get transactionList => _transactionList;
 
+  DateTime _dateTime = DateTime.now();
+  DateTime get dateTime => _dateTime;
+
   void setAmount(String value) {
     _amount = value;
     notifyListeners();

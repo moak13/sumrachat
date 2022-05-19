@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:sumrachat/core/extensions/date_time_extension.dart';
 import 'package:sumrachat/features/settings/view_model/settings_viewmodel.dart';
 
 class SettingsView extends StatelessWidget {
@@ -16,6 +17,9 @@ class SettingsView extends StatelessWidget {
         Widget? child,
       ) {
         return Scaffold(
+          appBar: AppBar(
+            title: Text('${model.dateTime.greetings}, Michael'),
+          ),
           body: SafeArea(
             child: Column(
               children: [
@@ -60,19 +64,26 @@ class SettingsView extends StatelessWidget {
                                   },
                                 ),
                               )
-                            : Expanded(
-                                child: ListView.builder(
-                                  itemCount: model.transactionList.length,
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    final transaction =
-                                        model.transactionList.elementAt(index);
-                                    return ListTile(
-                                      title: Text('${transaction.amount}'),
-                                    );
-                                  },
-                                ),
-                              ),
+                            : model.transactionList.isEmpty
+                                ? Expanded(
+                                    child: ListView.builder(
+                                      itemCount: model.transactionList.length,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        final transaction = model
+                                            .transactionList
+                                            .elementAt(index);
+                                        return ListTile(
+                                          title: Text('${transaction.amount}'),
+                                        );
+                                      },
+                                    ),
+                                  )
+                                : const Expanded(
+                                    child: Center(
+                                      child: Text('Search result not found'),
+                                    ),
+                                  ),
               ],
             ),
           ),
